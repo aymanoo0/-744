@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>رواد الشرق التجارية - موقع متكامل</title>
+    <!-- Tajawal font -->
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+        
+    <!-- هيدر جديد بتوزيع احترافي -->
+    <header style="background:#fff;box-shadow:0 2px 12px rgba(44,32,95,0.07);position:sticky;top:0;z-index:1000;">
+        <div class="header-container" style="display:flex;align-items:center;justify-content:space-between;gap:32px;padding:0 32px;height:80px;">
+            <!-- شعار الشركة يمين -->
+            <div style="display:flex;align-items:center;gap:12px;">
+                <img src="ima/لوجو-مدارات-هوم.png" alt="مدارات هوم" style="width:60px;height:60px;object-fit:contain;" />
+                <span style="font-weight:800;font-size:1.5rem;color:#d81b60;letter-spacing:1px;">مدارات هوم</span>
+            </div>
+            <!-- روابط التنقل وسط -->
+            <nav style="flex:1;display:flex;justify-content:center;">
+                <ul id="header-nav" style="display:flex;gap:36px;list-style:none;padding:0;margin:0;font-weight:700;font-size:1.15rem;">
+                    <li><button onclick="setActiveNav(this,'home')" style="color:#2c205f;background:none;border:none;cursor:pointer;padding:8px 18px;border-radius:8px;transition:background 0.2s;">الرئيسية</button></li>
+                    <li><button onclick="showSection('products')" class="nav-link" style="color:#2c205f;background:none;border:none;cursor:pointer;padding:8px 18px;border-radius:8px;transition:background 0.2s;">المنتجات</button></li>
+                    <li><button onclick="setActiveNav(this,'about')" style="color:#2c205f;background:none;border:none;cursor:pointer;padding:8px 18px;border-radius:8px;transition:background 0.2s;">من نحن</button></li>
+                    <li><button onclick="setActiveNav(this,'contact')" style="color:#2c205f;background:none;border:none;cursor:pointer;padding:8px 18px;border-radius:8px;transition:background 0.2s;">تواصل معنا</button></li>
+                </ul>
+            </nav>
+            <!-- زر تواصل أو رقم هاتف يسار -->
+            <div style="display:flex;align-items:center;gap:8px;">
+                <a href="tel:0534917397" style="background:#d81b60;color:#fff;font-weight:700;font-size:1.1rem;padding:10px 24px;border-radius:10px;text-decoration:none;box-shadow:0 2px 8px #eee;transition:background 0.2s;">0534917397</a>
+            </div>
+        </div>
+        <script>
+            // تغيير لون الرابط النشط في الهيدر
+            function setActiveNav(btn, section) {
+                document.querySelectorAll('#header-nav button').forEach(b => {
+                    b.style.background = 'none';
+                    b.style.color = '#2c205f';
+                    b.style.fontWeight = '700';
+                });
+                btn.style.background = '#f8f8fa';
+                btn.style.color = '#d81b60';
+                btn.style.fontWeight = '900';
+                if (typeof showSection === 'function') showSection(section);
+            }
+            // تفعيل أول رابط افتراضي عند تحميل الصفحة
+            window.addEventListener('DOMContentLoaded', function() {
+                var firstBtn = document.querySelector('#header-nav button');
+                if(firstBtn) setActiveNav(firstBtn,'home');
+            });
+        </script>
+    </header>
+
+    <section class="hero-section">
+        <div class="hero-bg-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>زيوت تثق بها، جودة تعتمد عليها</h1>
+                <p>الاختيار الذي لزيوت المحركات وقطع الغيار المتخصصة.</p>
+            </div>
+            <div class="hero-slider-nav">
+                <div class="slider-dot active"></div>
+                <div class="slider-dot"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-us-section">
+        <div class="container">
+            <h2 class="section-title">لماذا تختار مدارات هوم؟</h2>
+            <p class="section-subtitle">نقدم أفضل الحلول والمنتجات لتلبية جميع احتياجاتكم في البناء والكهرباء</p>
+            <div class="why-us-grid">
+                <div class="reason-card">
+                    <div class="card-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h4>ضمان الجودة</h4>
+                    <p>نضمن جودة جميع منتجاتنا مع خدمة ما بعد البيع</p>
+                </div>
+                <div class="reason-card">
+                    <div class="card-icon"><i class="fas fa-tools"></i></div>
+                    <h4>أدوات متخصصة</h4>
+                    <p>أدوات ومعدات متخصصة للمحترفين والهواة</p>
+                </div>
+                <div class="reason-card">
+                    <div class="card-icon"><i class="fas fa-bolt"></i></div>
+                    <h4>المستلزمات الكهربائية</h4>
+                    <p>مستلزمات كهربائية متنوعة وواسعة لجميع الاحتياجات</p>
+                </div>
+                <div class="reason-card">
+                    <div class="card-icon"><i class="fas fa-hard-hat"></i></div>
+                    <h4>مواد البناء</h4>
+                    <p>نوفر جميع مواد البناء عالية الجودة لمشاريعكم</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="vision-section">
+        <div class="container">
+            <h2 class="section-title">رؤيتنا ورسالتنا</h2>
+            <p class="section-subtitle">شركة مدارات هوم التجارية تسعى لتكون الرائدة في مجال مواد البناء والمستلزمات الكهربائية</p>
+            <div class="vision-content">
+                <div class="vision-text">
+                    <h3>رؤيتنا ورسالتنا</h3>
+                    <p>نسعى لأن نكون الخيار الأول للعملاء في مجال مواد البناء والمستلزمات الكهربائية من خلال تقديم منتجات عالية الجودة وخدمة عملاء استثنائية.</p>
+                    <p>نقوم بتوفير أحدث المنتجات والتقنيات في السوق مع الحفاظ على أعلى معايير الجودة وإتقان أعمالنا لضمان رضا عملائنا ونجاح مشاريعهم.</p>
+                    <div class="vision-cards-mobile">
+                        <div class="card"><div class="card-icon"><i class="fas fa-users"></i></div><h4>فريق محترف</h4><p>خبراء متخصصون</p></div>
+                        <div class="card"><div class="card-icon"><i class="fas fa-clock"></i></div><h4>دقة في التنفيذ</h4><p>نضمن تسليم طلباتكم</p></div>
+                        <div class="card"><div class="card-icon"><i class="fas fa-check-circle"></i></div><h4>جودة معتمدة</h4><p>منتجاتنا ذات جودة عالية</p></div>
+                    </div>
+                </div>
+                <div class="vision-cards-desktop">
+                    <div class="card"><div class="card-icon"><i class="fas fa-users"></i></div><h4>فريق محترف</h4><p>خبراء متخصصون في مجال البناء والكهرباء</p></div>
+                    <div class="card"><div class="card-icon"><i class="fas fa-clock"></i></div><h4>دقة في التنفيذ</h4><p>نضمن تسليم طلباتكم في الوقت المحدد</p></div>
+                    <div class="card"><div class="card-icon"><i class="fas fa-check-circle"></i></div><h4>جودة معتمدة</h4><p>منتجاتنا ذات جودة عالية</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number">+23</span>
+                    <span class="stat-label">مربع العمل</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">+600</span>
+                    <span class="stat-label">منتج</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">+30</span>
+                    <span class="stat-label">شهادات</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">+700</span>
+                    <span class="stat-label">عميل</span>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- الأقسام الجديدة المنسوخة من الكود الجديد (مُضافة في نهاية الصفحة) -->
+
+
+
+        <!-- سكريبت الحركة والإحصائيات -->
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const counters = document.querySelectorAll(".stat-number");
+                const speed = 200;
+
+                const animateCounter = (counter) => {
+                    const target = +counter.getAttribute("data-target");
+                    const count = +counter.innerText;
+                    const increment = Math.ceil(target / speed);
+
+                    if (count < target) {
+                        counter.innerText = count + increment;
+                        setTimeout(() => animateCounter(counter), 20);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+
+                const section = document.querySelector("#stats-section");
+                const observer = new IntersectionObserver(
+                    (entries, observer) => {
+                        entries.forEach((entry) => {
+                            if (entry.isIntersecting) {
+                                counters.forEach((counter) => {
+                                    counter.innerText = "0";
+                                    animateCounter(counter);
+                                });
+                                observer.unobserve(section);
+                            }
+                        });
+                    },
+                    { threshold: 0.3 }
+                );
+                observer.observe(section);
+
+                // مراقبة قسم الاستشارة للحركة
+                const consult = document.querySelector("#consult-section");
+                const consultObserver = new IntersectionObserver(
+                    (entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                consult.classList.add("visible");
+                            }
+                        });
+                    },
+                    { threshold: 0.2 }
+                );
+                consultObserver.observe(consult);
+            });
+        </script>
+  <!-- فاصل بين الأقسام -->
+        <div class="section-separator" style="height:60px;"></div>
+</body>
+    <section class="products-partner-section">
+        <div class="container">
+            <div class="section-header-products">
+                <h2 class="section-title">منتجات شركاؤنا</h2>
+                <span class="section-tag">منتجاتنا</span>
+            </div>
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/300x400.png?text=Product+Image" alt="زيت محركات" class="product-img">
+                    <div class="product-details">
+                        <p class="product-name">اسم المنتج</p>
+                        <button class="product-tag-btn">زيوت محركات</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/300x400.png?text=Product+Image" alt="زيت محركات" class="product-img">
+                    <div class="product-details">
+                        <p class="product-name">اسم المنتج</p>
+                        <button class="product-tag-btn">زيوت محركات</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/300x400.png?text=Product+Image" alt="زيت محركات" class="product-img">
+                    <div class="product-details">
+                        <p class="product-name">اسم المنتج</p>
+                        <button class="product-tag-btn">زيوت محركات</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/300x400.png?text=Product+Image" alt="زيت محركات" class="product-img">
+                    <div class="product-details">
+                        <p class="product-name">اسم المنتج</p>
+                        <button class="product-tag-btn">زيوت محركات</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="order-form-section">
+        <div class="container order-form-container">
+            <div class="order-form-content">
+                <div class="form-text">
+                    <h2>منتجاتنا الرئيسية</h2>
+                    <p>زيوت محركات بنزين وديزل بمختلف اللزوجات والمعالجات</p>
+                    <p>زيوت نقل الحركة (أوتوماتيكي ويدوي)</p>
+                    <p>زيوت الفرامل وزيوت الهيدروليك</p>
+                    <p>فلتر الزيت بأنواعها</p>
+                    <p>مبردات وحساسات ضغط الزيت</p>
+                </div>
+                <div class="form-box">
+                    <h3>اطلب طلبك</h3>
+                    <p>اكتب المنتجات التي تريدها وسوف يتوصل معك قسم المبيعات</p>
+                    <form>
+                        <input type="text" placeholder="الاسم الكامل" required>
+                        <input type="text" placeholder="اسم العمل أو المحل" required>
+                        <input type="tel" placeholder="رقم الجوال" required>
+                        <input type="text" placeholder="العنوان" required>
+                        <textarea placeholder="المنتجات المطلوبة مع رقمها"></textarea>
+                        <button type="submit">أرسل الطلب</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="distributor-map-section">
+        <div class="container">
+            <h2 class="section-title">خريطة موزعينا</h2>
+            <div class="map-container">
+                <img src="https://via.placeholder.com/1200x600.png?text=World+Map+with+Distributors" alt="خريطة الموزعين" class="map-image">
+                <div class="map-pin" style="top: 30%; right: 25%;">
+                    <div class="pin-info">
+                        <strong>Allstate Courier Systems</strong><br>
+                        Avenue of the Moon<br>
+                        Tower, East California
+                    </div>
+                </div>
+                <div class="map-pin" style="top: 55%; left: 30%;"></div>
+                <div class="map-pin" style="top: 40%; right: 70%;"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="consultation-section">
+        <div class="container">
+            <div class="consultation-box">
+                <h3>هل تحتاج إلى استشارة مجانية؟</h3>
+                <p>فريقنا من الخبراء جاهز لمساعدتك في اختيار أفضل المنتجات لمشروعك</p>
+                <a href="#" class="consultation-btn">احصل على استشارة مجانية</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="container footer-grid">
+            <div class="footer-contact">
+                <img src="https://via.placeholder.com/150x50.png?text=Logo" alt="شعار الشركة" class="footer-logo">
+                <p>شركة مدارات هوم التجارية - شريكك الموثوق في مواد البناء والمستلزمات الكهربائية.</p>
+                <div class="contact-info">
+                    <p><i class="fas fa-envelope"></i> orbitshome@yahoo.com</p>
+                    <p><i class="fas fa-phone"></i> 0524917397</p>
+                    <p><i class="fas fa-map-marker-alt"></i> المملكة العربية السعودية</p>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>روابط سريعة</h4>
+                <ul>
+                    <li><a href="#">الرئيسية</a></li>
+                    <li><a href="#">من نحن</a></li>
+                    <li><a href="#">اتصل بنا</a></li>
+                </ul>
+            </div>
+            <div class="footer-services">
+                <h4>خدماتنا</h4>
+                <ul>
+                    <li><a href="#">مواد البناء</a></li>
+                    <li><a href="#">المستلزمات الكهربائية</a></li>
+                    <li><a href="#">الأدوات والمعدات</a></li>
+                    <li><a href="#">الاستشارات الفنية</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
