@@ -23,7 +23,7 @@
             <nav style="flex:1;display:flex;justify-content:center;">
                 <ul id="header-nav" style="display:flex;gap:36px;list-style:none;padding:0;margin:0;font-weight:700;font-size:1.15rem;">
                     <li><button onclick="setActiveNav(this,'home')" style="color:#2c205f;background:none;border:none;cursor:pointer;padding:8px 18px;border-radius:8px;transition:background 0.2s;">الرئيسية</button></li>
-                    <li><button onclick="showSection('products')" class="nav-link" style="color:#2c205f;background:none;border:none;cursor:pointer;padding:8px 18px;border-radius:8px;transition:background 0.2s;">المنتجات</button></li>
+                    <li><a href="products.html" style="color:#2c205f;background:none;border:none;cursor:pointer;padding:8px 18px;border-radius:8px;transition:background 0.2s;text-decoration:none;">المنتجات</a></li>
                     <li><button onclick="setActiveNav(this,'about')" style="color:#2c205f;background:none;border:none;cursor:pointer;padding:8px 18px;border-radius:8px;transition:background 0.2s;">من نحن</button></li>
                     <li><button onclick="setActiveNav(this,'contact')" style="color:#2c205f;background:none;border:none;cursor:pointer;padding:8px 18px;border-radius:8px;transition:background 0.2s;">تواصل معنا</button></li>
                 </ul>
@@ -33,25 +33,76 @@
                 <a href="tel:0534917397" style="background:#d81b60;color:#fff;font-weight:700;font-size:1.1rem;padding:10px 24px;border-radius:10px;text-decoration:none;box-shadow:0 2px 8px #eee;transition:background 0.2s;">0534917397</a>
             </div>
         </div>
-        <script>
-            // تغيير لون الرابط النشط في الهيدر
-            function setActiveNav(btn, section) {
-                document.querySelectorAll('#header-nav button').forEach(b => {
-                    b.style.background = 'none';
-                    b.style.color = '#2c205f';
-                    b.style.fontWeight = '700';
-                });
-                btn.style.background = '#f8f8fa';
-                btn.style.color = '#d81b60';
-                btn.style.fontWeight = '900';
-                if (typeof showSection === 'function') showSection(section);
+            <div class="header-container" style="display:flex;align-items:center;justify-content:space-between;gap:32px;padding:0 32px;height:80px;">
+                <!-- شعار الشركة يمين -->
+                <div style="display:flex;align-items:center;gap:12px;">
+                    <img src="ima/لوجو-مدارات-هوم.png" alt="مدارات هوم" style="width:60px;height:60px;object-fit:contain;" />
+                    <span style="font-weight:800;font-size:1.5rem;color:#d81b60;letter-spacing:1px;">مدارات هوم</span>
+                </div>
+                <!-- روابط التنقل وسط (تظهر فقط في الكمبيوتر) -->
+                <nav class="desktop-nav" style="flex:1;display:flex;justify-content:center;">
+                    <ul id="header-nav" style="display:flex;gap:36px;list-style:none;padding:0;margin:0;font-weight:700;font-size:1.15rem;">
+                        <li><button onclick="setActiveNav(this,'home')" style="color:#2c205f;background:none;border:none;cursor:pointer;padding:8px 18px;border-radius:8px;transition:background 0.2s;">الرئيسية</button></li>
+                        <li><button onclick="showSection('about')" style="color:#2c205f;background:none;border:none;cursor:pointer;padding:8px 18px;border-radius:8px;transition:background 0.2s;">عن الشركة</button></li>
+                        <li><button onclick="showSection('products')" style="color:#2c205f;background:none;border:none;cursor:pointer;padding:8px 18px;border-radius:8px;transition:background 0.2s;">منتجاتنا</button></li>
+                        <li><button onclick="showSection('products')" style="color:#2c205f;background:none;border:none;cursor:pointer;padding:8px 18px;border-radius:8px;transition:background 0.2s;">منتجات شركاؤنا</button></li>
+                        <li><button onclick="showSection('order')" style="color:#2c205f;background:none;border:none;cursor:pointer;padding:8px 18px;border-radius:8px;transition:background 0.2s;">معالجات المحركات</button></li>
+                        <li><button onclick="showSection('contact')" style="color:#2c205f;background:none;border:none;cursor:pointer;padding:8px 18px;border-radius:8px;transition:background 0.2s;">تواصل معنا</button></li>
+                    </ul>
+                </nav>
+                <!-- زر تواصل أو رقم هاتف يسار -->
+                <div style="display:flex;align-items:center;gap:8px;">
+                    <a href="tel:0534917397" style="background:#d81b60;color:#fff;font-weight:700;font-size:1.1rem;padding:10px 24px;border-radius:10px;text-decoration:none;box-shadow:0 2px 8px #eee;transition:background 0.2s;">0534917397</a>
+                </div>
+                <!-- زر القائمة الجانبية للهاتف -->
+                <button id="mobile-menu-btn" class="mobile-menu-btn" style="background:none;border:none;display:none;flex-direction:column;justify-content:center;align-items:center;cursor:pointer;">
+                    <span style="width:30px;height:4px;background:#2c205f;margin:4px 0;border-radius:2px;display:block;"></span>
+                    <span style="width:30px;height:4px;background:#2c205f;margin:4px 0;border-radius:2px;display:block;"></span>
+                    <span style="width:30px;height:4px;background:#2c205f;margin:4px 0;border-radius:2px;display:block;"></span>
+                </button>
+            </div>
+            <!-- القائمة الجانبية للهاتف -->
+            <div id="mobile-menu" class="mobile-menu" style="display:none;position:fixed;top:0;right:0;width:80vw;max-width:400px;height:100vh;background:#fff;z-index:2000;box-shadow:-2px 0 12px rgba(44,32,95,0.07);padding:32px 24px;">
+                <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:32px;">
+                    <img src="ima/لوجو-مدارات-هوم.png" alt="مدارات هوم" style="width:60px;height:60px;object-fit:contain;" />
+                    <button id="close-menu-btn" style="background:none;border:none;font-size:2rem;color:#d81b60;cursor:pointer;">&times;</button>
+                </div>
+                <ul style="list-style:none;padding:0;margin:0;font-weight:700;font-size:1.15rem;">
+                    <li><button onclick="showSection('home');closeMobileMenu();" style="background:none;border:none;width:100%;text-align:right;padding:18px 0;color:#2c205f;font-size:1.1rem;">الرئيسية</button></li>
+                    <li><button onclick="showSection('about');closeMobileMenu();" style="background:none;border:none;width:100%;text-align:right;padding:18px 0;color:#2c205f;font-size:1.1rem;">عن الشركة</button></li>
+                    <li><button onclick="showSection('products');closeMobileMenu();" style="background:none;border:none;width:100%;text-align:right;padding:18px 0;color:#2c205f;font-size:1.1rem;">منتجاتنا</button></li>
+                    <li><button onclick="showSection('products');closeMobileMenu();" style="background:none;border:none;width:100%;text-align:right;padding:18px 0;color:#2c205f;font-size:1.1rem;">منتجات شركاؤنا</button></li>
+                    <li><button onclick="showSection('order');closeMobileMenu();" style="background:none;border:none;width:100%;text-align:right;padding:18px 0;color:#2c205f;font-size:1.1rem;">معالجات المحركات</button></li>
+                    <li><button onclick="showSection('contact');closeMobileMenu();" style="background:none;border:none;width:100%;text-align:right;padding:18px 0;color:#2c205f;font-size:1.1rem;">تواصل معنا</button></li>
+                </ul>
+            </div>
+            <script>
+            // إظهار القائمة الجانبية للهاتف
+            function closeMobileMenu() {
+                document.getElementById('mobile-menu').style.display = 'none';
             }
-            // تفعيل أول رابط افتراضي عند تحميل الصفحة
-            window.addEventListener('DOMContentLoaded', function() {
-                var firstBtn = document.querySelector('#header-nav button');
-                if(firstBtn) setActiveNav(firstBtn,'home');
-            });
-        </script>
+            document.getElementById('mobile-menu-btn').onclick = function() {
+                document.getElementById('mobile-menu').style.display = 'block';
+            };
+            document.getElementById('close-menu-btn').onclick = function() {
+                closeMobileMenu();
+            };
+            // إظهار زر القائمة فقط في الهاتف
+            function handleResize() {
+                var btn = document.getElementById('mobile-menu-btn');
+                var nav = document.querySelector('.desktop-nav');
+                if(window.innerWidth <= 900) {
+                    btn.style.display = 'flex';
+                    nav.style.display = 'none';
+                } else {
+                    btn.style.display = 'none';
+                    nav.style.display = 'flex';
+                    closeMobileMenu();
+                }
+            }
+            window.addEventListener('resize', handleResize);
+            window.addEventListener('DOMContentLoaded', handleResize);
+            </script>
     </header>
 
     <section class="hero-section">
