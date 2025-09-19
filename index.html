@@ -1393,50 +1393,702 @@
 
 
             
-             <!-- Vision & Mission Section -->
-            <section class="py-20 bg-white">
-                <div class="container mx-auto px-4">
-                    <div class="text-center mb-12">
-                        <span class="bg-red-100 text-gray-900 px-4 py-2 rounded-full font-bold">منتجاتنا</span>
-                        <h2 class="text-4xl font-bold mt-4 mb-8">المنتجات </h2>
+            <!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منتجات شركاؤنا</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap');
+
+        :root {
+            --primary-color: #E63946;
+            --text-color: #333;
+            --background-color: #f0f0f0;
+            --card-background: #fff;
+            --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            direction: rtl;
+            text-align: right;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+
+        /* Products & Partners Section */
+        .products-partners-section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: right;
+            margin-bottom: 3rem;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .section-tag {
+            background-color: #f7e6e7;
+            color: var(--primary-color);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 700;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-color);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .product-card {
+            background-color: var(--card-background);
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            position: relative;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .product-image img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .product-info {
+            width: 100%;
+            padding-top: 1rem;
+        }
+
+        .product-name {
+            font-size: 1rem;
+            margin-top: 1rem;
+            font-weight: 700;
+        }
+
+        .product-spec {
+            font-size: 0.9rem;
+            color: #777;
+            margin-top: 0.25rem;
+            display: block;
+        }
+
+        .product-button {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .product-button:hover {
+            background-color: #D32F3D;
+        }
+        
+        /* The Modal (Image Lightbox) */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1001;
+            padding-top: 50px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.9);
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+
+        .modal-content, .close { 
+            animation-name: zoom;
+            animation-duration: 0.6s;
+        }
+
+        @keyframes zoom {
+            from {transform:scale(0)} 
+            to {transform:scale(1)}
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .section-header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 0.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="products-partners-section">
+        <div class="section-header">
+            <span class="section-tag">منتجاتنا</span>
+            <h2 class="section-title">منتجات شركاؤنا</h2>
+        </div>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://via.placeholder.com/300x400?text=Product+1" alt="Product 1">
+                </div>
+                <div class="product-info">
+                    <a href="#" class="product-button">زيوت القير</a>
+                    <h3 class="product-name">اسم المنتج</h3>
+                    <span class="product-spec">المواصفات</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://via.placeholder.com/300x400?text=Product+2" alt="Product 2">
+                </div>
+                <div class="product-info">
+                    <a href="#" class="product-button">زيوت محركات</a>
+                    <h3 class="product-name">اسم المنتج</h3>
+                    <span class="product-spec">المواصفات</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://via.placeholder.com/300x400?text=Product+3" alt="Product 3">
+                </div>
+                <div class="product-info">
+                    <a href="#" class="product-button">زيوت محركات</a>
+                    <h3 class="product-name">اسم المنتج</h3>
+                    <span class="product-spec">المواصفات</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://via.placeholder.com/300x400?text=Product+4" alt="Product 4">
+                </div>
+                <div class="product-info">
+                    <a href="#" class="product-button">زيوت محركات</a>
+                    <h3 class="product-name">اسم المنتج</h3>
+                    <span class="product-spec">المواصفات</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://via.placeholder.com/300x400?text=Product+5" alt="Product 5">
+                </div>
+                <div class="product-info">
+                    <a href="#" class="product-button">زيوت القير</a>
+                    <h3 class="product-name">اسم المنتج</h3>
+                    <span class="product-spec">المواصفات</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://via.placeholder.com/300x400?text=Product+6" alt="Product 6">
+                </div>
+                <div class="product-info">
+                    <a href="#" class="product-button">زيوت محركات</a>
+                    <h3 class="product-name">اسم المنتج</h3>
+                    <span class="product-spec">المواصفات</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://via.placeholder.com/300x400?text=Product+7" alt="Product 7">
+                </div>
+                <div class="product-info">
+                    <a href="#" class="product-button">زيوت محركات</a>
+                    <h3 class="product-name">اسم المنتج</h3>
+                    <span class="product-spec">المواصفات</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://via.placeholder.com/300x400?text=Product+8" alt="Product 8">
+                </div>
+                <div class="product-info">
+                    <a href="#" class="product-button">زيوت محركات</a>
+                    <h3 class="product-name">اسم المنتج</h3>
+                    <span class="product-spec">المواصفات</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://via.placeholder.com/300x400?text=Product+9" alt="Product 9">
+                </div>
+                <div class="product-info">
+                    <a href="#" class="product-button">زيوت القير</a>
+                    <h3 class="product-name">اسم المنتج</h3>
+                    <span class="product-spec">المواصفات</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://via.placeholder.com/300x400?text=Product+10" alt="Product 10">
+                </div>
+                <div class="product-info">
+                    <a href="#" class="product-button">زيوت محركات</a>
+                    <h3 class="product-name">اسم المنتج</h3>
+                    <span class="product-spec">المواصفات</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://via.placeholder.com/300x400?text=Product+11" alt="Product 11">
+                </div>
+                <div class="product-info">
+                    <a href="#" class="product-button">زيوت محركات</a>
+                    <h3 class="product-name">اسم المنتج</h3>
+                    <span class="product-spec">المواصفات</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://via.placeholder.com/300x400?text=Product+12" alt="Product 12">
+                </div>
+                <div class="product-info">
+                    <a href="#" class="product-button">زيوت محركات</a>
+                    <h3 class="product-name">اسم المنتج</h3>
+                    <span class="product-spec">المواصفات</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://via.placeholder.com/300x400?text=Product+13" alt="Product 13">
+                </div>
+                <div class="product-info">
+                    <a href="#" class="product-button">زيوت القير</a>
+                    <h3 class="product-name">اسم المنتج</h3>
+                    <span class="product-spec">المواصفات</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://via.placeholder.com/300x400?text=Product+14" alt="Product 14">
+                </div>
+                <div class="product-info">
+                    <a href="#" class="product-button">زيوت محركات</a>
+                    <h3 class="product-name">اسم المنتج</h3>
+                    <span class="product-spec">المواصفات</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://via.placeholder.com/300x400?text=Product+15" alt="Product 15">
+                </div>
+                <div class="product-info">
+                    <a href="#" class="product-button">زيوت محركات</a>
+                    <h3 class="product-name">اسم المنتج</h3>
+                    <span class="product-spec">المواصفات</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://via.placeholder.com/300x400?text=Product+16" alt="Product 16">
+                </div>
+                <div class="product-info">
+                    <a href="#" class="product-button">زيوت محركات</a>
+                    <h3 class="product-name">اسم المنتج</h3>
+                    <span class="product-spec">المواصفات</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="imgModal">
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const modal = document.getElementById("myModal");
+            const modalImg = document.getElementById("imgModal");
+            const productCards = document.querySelectorAll('.product-card');
+            const closeBtn = document.getElementsByClassName("close")[0];
+
+            productCards.forEach(card => {
+                card.addEventListener('click', (event) => {
+                    const img = card.querySelector('.product-image img');
+                    modal.style.display = "block";
+                    modalImg.src = img.src;
+                });
+            });
+
+            closeBtn.onclick = function() {
+                modal.style.display = "none";
+            }
+
+            window.onclick = function(event) {
+                if (event.target === modal) {
+                    modal.style.display = "none";
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أوتو جي تي سبيشل</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap');
+
+        :root {
+            --primary-color: #E63946;
+            --text-color: #333;
+            --background-color: #f0f0f0;
+            --card-background: #fff;
+            --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            direction: rtl;
+            text-align: right;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+
+        /* Products Section */
+        .products-partners-section {
+            padding: 4rem 0;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: right;
+            margin-bottom: 3rem;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .title-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .section-tag {
+            background-color: #f7e6e7;
+            color: var(--primary-color);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-color);
+        }
+
+        /* Navigation Controls (Hidden for automatic mode) */
+        .carousel-nav {
+            display: none; /* Hide navigation buttons and indicator */
+        }
+        
+        /* Carousel Styling */
+        .carousel-container {
+            overflow: hidden;
+        }
+        
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            will-change: transform;
+        }
+
+        .product-card {
+            background-color: var(--card-background);
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            position: relative;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            min-width: 250px;
+            flex-shrink: 0;
+            margin: 0 0.75rem;
+        }
+
+        .product-card:first-child {
+            margin-right: 2rem;
+        }
+
+        .product-card:last-child {
+            margin-left: 2rem;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .product-image img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .product-info {
+            width: 100%;
+            padding-top: 1rem;
+        }
+
+        .product-name {
+            font-size: 1rem;
+            margin-top: 1rem;
+            font-weight: 700;
+        }
+
+        .product-spec {
+            font-size: 0.9rem;
+            color: #777;
+            margin-top: 0.25rem;
+            display: block;
+        }
+
+        /* The Modal (Image Lightbox) */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1001;
+            padding-top: 50px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.9);
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+    </style>
+</head>
+<body>
+
+    <section class="products-partners-section">
+        <div class="section-header">
+            <div class="title-container">
+                <span class="section-tag">من منتجاتنا الخاصة</span>
+                <h2 class="section-title">أوتو جي تي سبيشل</h2>
+            </div>
+            <div class="carousel-nav" style="display: none;">
+                <div class="page-indicator" id="page-indicator">1 / 6</div>
+                <div class="nav-buttons">
+                    <div class="nav-button prev" id="prev-btn">
+                        <i class="fas fa-angle-right"></i>
                     </div>
-                    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:32px;justify-items:center;align-items:center;">
-                        <!-- صف أول -->
-                        <div style="background:#fff;border-radius:18px;box-shadow:0 2px 8px #eee;padding:18px;display:flex;align-items:center;justify-content:center;width:170px;height:210px;">
-                            <img src="ima/منتج1.jpg" alt="منتج 1" style="width:100%;height:100%;object-fit:contain;" />
-                        </div>
-                        <div style="background:#fff;border-radius:18px;box-shadow:0 2px 8px #eee;padding:18px;display:flex;align-items:center;justify-content:center;width:170px;height:210px;">
-                            <img src="ima/منتج2.jpg" alt="منتج 2" style="width:100%;height:100%;object-fit:contain;" />
-                        </div>
-                        <div style="background:#fff;border-radius:18px;box-shadow:0 2px 8px #eee;padding:18px;display:flex;align-items:center;justify-content:center;width:170px;height:210px;">
-                            <img src="ima/منتج3.jpg" alt="منتج 3" style="width:100%;height:100%;object-fit:contain;" />
-                        </div>
-                        <!-- بطاقة وصف حمراء -->
-                        <div style="background:#d81b60;border-radius:18px;box-shadow:0 2px 8px #eee;padding:18px 24px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;width:270px;height:210px;">
-                            <span style="background:#fff;color:#d81b60;padding:6px 18px;border-radius:8px;font-size:1rem;font-weight:700;display:inline-block;margin-bottom:12px;">منتجات </span>
-                            <div style="color:#fff;font-size:1.15rem;font-weight:600;line-height:1.7;">المعالجات البريطانية للمحركات من<br>شركة محمد يوسف ناغي للسيارات</div>
-                        </div>
-                        <!-- صف ثاني -->
-                        <div style="background:#fff;border-radius:18px;box-shadow:0 2px 8px #eee;padding:18px;display:flex;align-items:center;justify-content:center;width:170px;height:210px;grid-column:1;grid-row:2;">
-                            <img src="ima/منتج3.jpg" alt="منتج 4" style="width:100%;height:100%;object-fit:contain;" />
-                        </div>
-                        <div style="background:#fff;border-radius:18px;box-shadow:0 2px 8px #eee;padding:18px;display:flex;align-items:center;justify-content:center;width:170px;height:210px;grid-column:2;grid-row:2;">
-                            <img src="ima/منتج3.jpg" alt="منتج 5" style="width:100%;height:100%;object-fit:contain;" />
-                        </div>
-                        <div style="background:#fff;border-radius:18px;box-shadow:0 2px 8px #eee;padding:18px;display:flex;align-items:center;justify-content:center;width:170px;height:210px;grid-column:3;grid-row:2;">
-                            <img src="ima/منتج3.jpg" alt="منتج 6" style="width:100%;height:100%;object-fit:contain;" />
-                        </div>
-                        <div style="background:#fff;border-radius:18px;box-shadow:0 2px 8px #eee;padding:18px;display:flex;align-items:center;justify-content:center;width:170px;height:210px;grid-column:4;grid-row:2;">
-                            <img src="ima/منتج3.jpg" alt="منتج 7" style="width:100%;height:100%;object-fit:contain;" />
-                        </div>
-                    </div>
-                    <div class="flex justify-center mt-8">
-                        <a href="#products-section" class="bg-red-600 text-white px-8 py-4 rounded-lg font-bold text-xl shadow hover:bg-red-700 transition-colors" style="display:inline-block;">
-                            اعرض المزيد
-                        </a>
+                    <div class="nav-button next" id="next-btn">
+                        <i class="fas fa-angle-left"></i>
                     </div>
                 </div>
-            </section>
+            </div>
+        </div>
+        
+        <div class="carousel-container">
+            <div class="carousel-track" id="carousel-track">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://via.placeholder.com/300x400?text=Product+1" alt="Product 1">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">اسم المنتج</h3>
+                        <span class="product-spec">المواصفات</span>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://via.placeholder.com/300x400?text=Product+2" alt="Product 2">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">اسم المنتج</h3>
+                        <span class="product-spec">المواصفات</span>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://via.placeholder.com/300x400?text=Product+3" alt="Product 3">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">اسم المنتج</h3>
+                        <span class="product-spec">المواصفات</span>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://via.placeholder.com/300x400?text=Product+4" alt="Product 4">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">اسم المنتج</h3>
+                        <span class="product-spec">المواصفات</span>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://via.placeholder.com/300x400?text=Product+5" alt="Product 5">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">اسم المنتج</h3>
+                        <span class="product-spec">المواصفات</span>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://via.placeholder.com/300x400?text=Product+6" alt="Product 6">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">اسم المنتج</h3>
+                        <span class="product-spec">المواصفات</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="imgModal">
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const carouselTrack = document.getElementById('carousel-track');
+            const productCards = document.querySelectorAll('.product-card');
+            
+            // Duplicate the cards to create an infinite loop effect
+            const clonedCards = Array.from(productCards).map(card => card.cloneNode(true));
+            clonedCards.forEach(card => carouselTrack.appendChild(card));
+
+            let position = 0;
+            const scrollSpeed = 0.5; // Adjust this value for speed (lower = faster)
+            const cardWidth = productCards[0].offsetWidth + (parseFloat(getComputedStyle(productCards[0]).marginRight) * 2);
+
+            function autoScroll() {
+                position -= scrollSpeed;
+                carouselTrack.style.transform = `translateX(${position}px)`;
+
+                // Reset position to create a seamless loop
+                if (Math.abs(position) >= cardWidth * productCards.length) {
+                    position = 0;
+                }
+                requestAnimationFrame(autoScroll);
+            }
+
+            // Start the automatic scroll
+            autoScroll();
+        });
+    </script>
+</body>
+</html>
 
              <!-- Map Section in Home -->
                 <section class="py-20 bg-gray-50">
