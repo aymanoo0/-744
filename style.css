@@ -886,3 +886,32 @@ textarea:focus {
     page-break-after: avoid;
   }
 }
+@media (max-width: 768px) {
+    .products-grid {
+        /* On small screens, stack products in a single column */
+        grid-template-columns: 1fr;
+    }
+}
+/* Ensure the mobile header is hidden on desktop */
+.mobile-header {
+    display: none;
+}
+
+/* Ensure the desktop header is visible by default */
+.desktop-header {
+    display: flex; /* Or whatever display property you use */
+}
+
+/* Media Query to hide desktop header on larger screens (e.g., tablets & desktops) */
+@media (min-width: 769px) {
+    .desktop-header {
+        display: none;
+    }
+}
+
+/* Media Query to show mobile header on smaller screens (e.g., phones) */
+@media (max-width: 768px) {
+    .mobile-header {
+        display: flex; /* Or block, grid, etc. */
+    }
+}
